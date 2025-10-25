@@ -3,7 +3,8 @@ import {
     convertToEnglishNumber,
     getFormattedBanglaDate,
     getBanglaMonth,
-    getBanglaDay
+    getBanglaDay,
+    getBanglaYear
 } from './utils/index.js';
 
 export function useBanglaDate() {
@@ -22,6 +23,7 @@ export function useBanglaDate() {
         convertToEnglishNumber,
         getFormattedBanglaDate,
         getBanglaMonth,
-        getBanglaDay
+        getBanglaDay,
+        getBanglaYear
     };
 }

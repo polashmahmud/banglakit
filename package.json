@@ -19,5 +19,8 @@
     "typescript"
   ],
   "author": "Polash Mahmud",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
 }
