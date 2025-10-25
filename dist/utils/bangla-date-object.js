@@ -1,16 +1,15 @@
 import { convertToBanglaNumber } from './numbers.js';
 import { banglaMonths, banglaDays } from './calendar.js';
 /**
- * Returns the current Bangla date as an object
- * {
- *   day: "২৫",
- *   month: "অক্টোবর",
- *   weekday: "শনিবার",
- *   year: "১৪৩২"
- * }
+ * Returns Bangla date as an object.
+ * If no date is provided, it returns the current Bangla date.
+ *
+ * Example:
+ * getBanglaDateObject(); // current date
+ * getBanglaDateObject(new Date("2025-05-12")); // custom date
  */
-export const getBanglaDateObject = () => {
-    const today = new Date();
+export const getBanglaDateObject = (dateInput) => {
+    const today = dateInput !== null && dateInput !== void 0 ? dateInput : new Date();
     const day = today.getDate();
     const month = today.getMonth();
     const weekday = today.getDay();

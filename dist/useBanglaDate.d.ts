@@ -16,10 +16,13 @@ export declare function useBanglaDate(): {
         newYearDate: string;
         isLeapYear: boolean;
     };
-    getBanglaDateObject: () => {
+    getBanglaDateObject: (dateInput?: Date) => {
         day: string;
         month: string;
         weekday: string;
         year: string;
     };
+    getBanglaCalendarDate: () => string;
+    getBanglaDateRange: (startDate: string | Date, endDate: string | Date) => string;
+    convertToBanglaTime: (time: string) => string;
 };
