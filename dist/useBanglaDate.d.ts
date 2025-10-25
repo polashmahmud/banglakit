@@ -1,3 +1,4 @@
+import { convertToBanglaWords } from './utils/index.js';
 export declare function useBanglaDate(): {
     getTodayInBangla: () => string;
     convertToBanglaNumber: (num: number | string) => string;
@@ -25,4 +26,6 @@ export declare function useBanglaDate(): {
     getBanglaCalendarDate: () => string;
     getBanglaDateRange: (startDate: string | Date, endDate: string | Date) => string;
     convertToBanglaTime: (time: string) => string;
+    convertToBanglaOrdinal: (num: number) => string;
+    convertToBanglaWords: typeof convertToBanglaWords;
 };

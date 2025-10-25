@@ -7,3 +7,4 @@ export * from './bangla-calendar.js';
 export * from './bangla-date-range.js';
 export * from './bangla-time.js';
 export * from './bangla-ordinal.js';
+export * from './convert-to-bangla-words.js';
