@@ -61,5 +61,18 @@ export function useBanglaDate() {
         return result;
     };
 
-    return { getTodayInBangla, convertToBanglaNumber, getFormattedBanglaDate };
+    const getBanglaMonth = (monthIndex: number): string => {
+        const index = monthIndex - 1;
+        return banglaMonths[index] ?? '';
+    };
+
+    const getBanglaDay = (dayIndex: number): string => {
+        const index = dayIndex - 1;
+        return banglaDays[index] ?? '';
+    };
+
+    return {
+        getTodayInBangla, convertToBanglaNumber, getFormattedBanglaDate, getBanglaMonth,
+        getBanglaDay
+    };
 }
