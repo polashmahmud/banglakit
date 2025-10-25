@@ -4,7 +4,12 @@ import {
     getFormattedBanglaDate,
     getBanglaMonth,
     getBanglaDay,
-    getBanglaYear
+    getBanglaYear,
+    getEnglishToBanglaYear,
+    getBanglaToEnglishYear,
+    getBanglaNewYearDate,
+    isBanglaLeapYear,
+    getBanglaYearInfo
 } from './utils/index.js';
 
 export function useBanglaDate() {
@@ -24,6 +29,11 @@ export function useBanglaDate() {
         getFormattedBanglaDate,
         getBanglaMonth,
         getBanglaDay,
-        getBanglaYear
+        getBanglaYear,
+        getEnglishToBanglaYear,
+        getBanglaToEnglishYear,
+        getBanglaNewYearDate,
+        isBanglaLeapYear,
+        getBanglaYearInfo
     };
 }
