@@ -1,0 +1,14 @@
+{
+  "name": "bangla-date-utils",
+  "version": "1.0.0",
+  "description": "A lightweight utility to display Bangla dates and convert numbers to Bangla digits.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": ["bangla", "date", "utility", "bangla-date", "typescript"],
+  "author": "Polash Mahmud",
+  "license": "MIT"
+}
