@@ -1,20 +1,22 @@
-# 🗓️ @polashmahmud/bangla-date-utils
+# @polashmahmud/bangla-date-utils
 
-A lightweight JavaScript utility to easily display **Bangla (Bengali) dates** and **convert English digits to Bangla digits**.
-It helps developers localize their apps with Bangla date and number formatting in just a few lines.
-
----
-
-## 🚀 Features
-
-✅ Convert English numbers → Bangla digits
-✅ Display today's date in Bangla
-✅ Works with Vue, React, Next.js, Node.js, or any JavaScript/TypeScript project
-✅ TypeScript support with zero dependencies
+A lightweight JavaScript utility for displaying Bangla (Bengali) dates and converting English numbers into Bangla digits.
+It allows developers to easily localize their applications with Bangla date and number formatting.
 
 ---
 
-## 📦 Installation
+## Features
+
+- Convert English numbers to Bangla digits
+- Display today’s date in Bangla
+- Works with Vue, React, Next.js, Node.js, or any JavaScript/TypeScript project
+- Built with TypeScript and has zero dependencies
+
+---
+
+## Installation
+
+You can install the package using npm or yarn:
 
 ```bash
 npm install @polashmahmud/bangla-date-utils
@@ -24,7 +26,7 @@ yarn add @polashmahmud/bangla-date-utils
 
 ---
 
-## 💡 Usage Examples
+## Usage Examples
 
 ### Display Today’s Date in Bangla
 
@@ -55,7 +57,7 @@ console.log(convertToBanglaNumber(1234567890));
 
 ---
 
-## 🧩 Vue.js Example
+## Example with Vue.js
 
 ```vue
 <script setup lang="ts">
@@ -73,7 +75,7 @@ const { getTodayInBangla } = useBanglaDate();
 
 ---
 
-## ⚙️ Node.js Example
+## Example with Node.js
 
 ```js
 const { useBanglaDate } = require("@polashmahmud/bangla-date-utils");
@@ -84,44 +86,44 @@ console.log(getTodayInBangla());
 
 ---
 
-## 🧠 API Reference
+## API Reference
 
 ### `useBanglaDate()`
 
-This function returns two helpers:
+This function returns two helper methods:
 
-| Function                             | Description                                      |
-| ------------------------------------ | ------------------------------------------------ |
-| `getTodayInBangla()`                 | Returns today’s date written in Bangla           |
-| `convertToBanglaNumber(num: number)` | Converts a given English number to Bangla digits |
+| Function                             | Description                                        |
+| ------------------------------------ | -------------------------------------------------- |
+| `getTodayInBangla()`                 | Returns today’s date written in Bangla             |
+| `convertToBanglaNumber(num: number)` | Converts a given English number into Bangla digits |
 
 ---
 
 ## Technical Details
 
-- Written in **TypeScript**
-- **ES Module** compatible
-- **Zero dependencies**
-- Pure **JavaScript logic**, lightweight and framework-agnostic
+- Written in TypeScript
+- Compatible with ES Modules
+- No external dependencies
+- Lightweight and framework-agnostic
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
 **Polash Mahmud**
-📦 [npmjs.com/~polashmahmud](https://www.npmjs.com/~polashmahmud)
-🌐 [GitHub Profile](https://github.com/polashmahmud)
+
+- npm: [npmjs.com/~polashmahmud](https://www.npmjs.com/~polashmahmud)
+- GitHub: [github.com/polashmahmud](https://github.com/polashmahmud)
 
 ---
 
-## 📄 License
+## License
 
-This package is released under the [MIT License](./LICENSE).
-You’re free to use it in both personal and commercial projects.
+This package is licensed under the [MIT License](./LICENSE).
+You can freely use it in personal or commercial projects.
 
 ---
 
-## 🌟 Contributing
+## Contributing
 
-Want to add a new feature or report a bug?
-Please feel free to **open an issue** or **submit a pull request** on the GitHub repository.
+If you’d like to suggest a new feature or report a bug, feel free to open an issue or submit a pull request on the GitHub repository.
