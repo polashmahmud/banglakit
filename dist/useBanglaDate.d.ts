@@ -16,4 +16,10 @@ export declare function useBanglaDate(): {
         newYearDate: string;
         isLeapYear: boolean;
     };
+    getBanglaDateObject: () => {
+        day: string;
+        month: string;
+        weekday: string;
+        year: string;
+    };
 };

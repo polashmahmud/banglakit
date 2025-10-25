@@ -1,4 +1,4 @@
-import { convertToBanglaNumber, convertToEnglishNumber, getFormattedBanglaDate, getBanglaMonth, getBanglaDay, getBanglaYear, getEnglishToBanglaYear, getBanglaToEnglishYear, getBanglaNewYearDate, isBanglaLeapYear, getBanglaYearInfo } from './utils/index.js';
+import { convertToBanglaNumber, convertToEnglishNumber, getFormattedBanglaDate, getBanglaMonth, getBanglaDay, getBanglaYear, getEnglishToBanglaYear, getBanglaToEnglishYear, getBanglaNewYearDate, isBanglaLeapYear, getBanglaYearInfo, getBanglaDateObject } from './utils/index.js';
 export function useBanglaDate() {
     const getTodayInBangla = () => {
         const today = new Date();
@@ -19,6 +19,7 @@ export function useBanglaDate() {
         getBanglaToEnglishYear,
         getBanglaNewYearDate,
         isBanglaLeapYear,
-        getBanglaYearInfo
+        getBanglaYearInfo,
+        getBanglaDateObject
     };
 }

@@ -9,7 +9,8 @@ import {
     getBanglaToEnglishYear,
     getBanglaNewYearDate,
     isBanglaLeapYear,
-    getBanglaYearInfo
+    getBanglaYearInfo,
+    getBanglaDateObject
 } from './utils/index.js';
 
 export function useBanglaDate() {
@@ -34,6 +35,7 @@ export function useBanglaDate() {
         getBanglaToEnglishYear,
         getBanglaNewYearDate,
         isBanglaLeapYear,
-        getBanglaYearInfo
+        getBanglaYearInfo,
+        getBanglaDateObject
     };
 }
