@@ -50,8 +50,7 @@ export function convertToBanglaWords(amount) {
     const taka = parseInt(takaPart, 10);
     let words = `${numberToWords(taka)} টাকা`;
     if (poishaPartRaw) {
-        // ঠিক দুই ডিজিট পর্যন্ত নাও (যেমন 5 → 50, 05 → 5)
-        let poishaFixed = poishaPartRaw.padEnd(2, "0").slice(0, 2);
+        let poishaFixed = poishaPartRaw.length === 1 ? poishaPartRaw : poishaPartRaw.slice(0, 2);
         const poisha = parseInt(poishaFixed, 10);
         if (poisha > 0) {
             words += ` ${numberToWords(poisha)} পয়সা`;
