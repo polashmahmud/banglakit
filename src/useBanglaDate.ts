@@ -13,7 +13,8 @@ import {
     getBanglaDateObject,
     getBanglaCalendarDate,
     getBanglaDateRange,
-    convertToBanglaTime
+    convertToBanglaTime,
+    convertToBanglaOrdinal
 } from './utils/index.js';
 
 export function useBanglaDate() {
@@ -42,6 +43,7 @@ export function useBanglaDate() {
         getBanglaDateObject,
         getBanglaCalendarDate,
         getBanglaDateRange,
-        convertToBanglaTime
+        convertToBanglaTime,
+        convertToBanglaOrdinal
     };
 }
