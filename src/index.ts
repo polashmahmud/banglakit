@@ -10,11 +10,11 @@ export function useBanglaDate() {
 
     const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
 
-    const convertToBanglaNumber = (num: number): string => {
-        return num
-            .toString()
+    const convertToBanglaNumber = (num: number | string): string => {
+        const str = num.toString();
+        return str
             .split('')
-            .map(digit => (/\d/.test(digit) ? banglaDigits[parseInt(digit)] : digit))
+            .map(digit => (/\d/.test(digit) ? banglaDigits[parseInt(digit, 10)] : digit))
             .join('');
     };
 
@@ -27,5 +27,39 @@ export function useBanglaDate() {
         return `${convertToBanglaNumber(day)} ${banglaMonths[month]}, ${banglaDays[dayName]}`;
     };
 
-    return { getTodayInBangla, convertToBanglaNumber };
+    const getFormattedBanglaDate = (format = "D MMMM, dddd, YYYY"): string => {
+        const today = new Date();
+
+        const day = today.getDate();
+        const month = today.getMonth();
+        const dayName = today.getDay();
+        const year = today.getFullYear();
+
+        // monthIndex is 0–11 → convert to 1–12
+        const monthNumber = month + 1;
+
+        const tokens: Record<string, string> = {
+            "DD": convertToBanglaNumber(day.toString().padStart(2, '0')),
+            "D": convertToBanglaNumber(day),
+            "MMMM": banglaMonths[month],
+            "MMM": banglaMonths[month].slice(0, 3),
+            "MM": convertToBanglaNumber(monthNumber.toString().padStart(2, '0')),
+            "M": convertToBanglaNumber(monthNumber),
+            "YYYY": convertToBanglaNumber(year),
+            "dddd": banglaDays[dayName]
+        };
+
+        // Sort tokens by length (replace longer ones first)
+        const sortedTokens = Object.keys(tokens).sort((a, b) => b.length - a.length);
+
+        let result = format;
+        for (const token of sortedTokens) {
+            const regex = new RegExp(token, "g");
+            result = result.replace(regex, tokens[token]);
+        }
+
+        return result;
+    };
+
+    return { getTodayInBangla, convertToBanglaNumber, getFormattedBanglaDate };
 }

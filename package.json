@@ -2,6 +2,7 @@
   "name": "@polashmahmud/bangla-date-utils",
   "version": "1.0.3",
   "description": "A lightweight utility to display Bangla dates and convert numbers to Bangla digits.",
+  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
