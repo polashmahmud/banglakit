@@ -58,8 +58,19 @@ export function useBanglaDate() {
         const index = dayIndex - 1;
         return (_a = banglaDays[index]) !== null && _a !== void 0 ? _a : '';
     };
+    const convertToEnglishNumber = (str) => {
+        const banglaDigits = ['০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'];
+        const englishDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        return str
+            .split('')
+            .map(char => {
+            const index = banglaDigits.indexOf(char);
+            return index !== -1 ? englishDigits[index] : char;
+        })
+            .join('');
+    };
     return {
         getTodayInBangla, convertToBanglaNumber, getFormattedBanglaDate, getBanglaMonth,
-        getBanglaDay
+        getBanglaDay, convertToEnglishNumber
     };
 }

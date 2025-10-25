@@ -4,4 +4,5 @@ export declare function useBanglaDate(): {
     getFormattedBanglaDate: (format?: string) => string;
     getBanglaMonth: (monthIndex: number) => string;
     getBanglaDay: (dayIndex: number) => string;
+    convertToEnglishNumber: (str: string) => string;
 };
