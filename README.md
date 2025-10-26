@@ -492,6 +492,104 @@ console.log(convertToBanglaTime("00:05"));
 // Output: রাত ১২:০৫
 ```
 
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { convertToBanglaOrdinal } = useBanglaKit();
+
+// Example 1: Basic ordinals
+console.log(convertToBanglaOrdinal(1));
+// Output: প্রথম
+
+console.log(convertToBanglaOrdinal(2));
+// Output: দ্বিতীয়
+
+console.log(convertToBanglaOrdinal(3));
+// Output: তৃতীয়
+
+console.log(convertToBanglaOrdinal(4));
+// Output: চতুর্থ
+
+// Example 2: Teen and twenties
+console.log(convertToBanglaOrdinal(11));
+// Output: একাদশ
+
+console.log(convertToBanglaOrdinal(15));
+// Output: পঞ্চদশ
+
+console.log(convertToBanglaOrdinal(21));
+// Output: একবিংশ
+
+// Example 3: Larger numbers
+console.log(convertToBanglaOrdinal(30));
+// Output: ত্রিংশ
+
+console.log(convertToBanglaOrdinal(50));
+// Output: পঞ্চাশতম
+
+console.log(convertToBanglaOrdinal(100));
+// Output: শততম
+
+// Example 4: Fallback pattern (not predefined)
+console.log(convertToBanglaOrdinal(33));
+// Output: ৩৩তম
+
+console.log(convertToBanglaOrdinal(77));
+// Output: ৭৭তম
+```
+
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { convertToBanglaWords } = useBanglaKit();
+
+// Example 1: Whole number
+console.log(convertToBanglaWords(1));
+// Output: এক টাকা
+
+console.log(convertToBanglaWords(25));
+// Output: পঁচিশ টাকা
+
+console.log(convertToBanglaWords(105));
+// Output: এক শত পাঁচ টাকা
+
+console.log(convertToBanglaWords(2025));
+// Output: দুই হাজার পঁচিশ টাকা
+
+// Example 2: With poisha (decimal part)
+console.log(convertToBanglaWords(1.1));
+// Output: এক টাকা দশ পয়সা
+
+console.log(convertToBanglaWords(1.5));
+// Output: এক টাকা পঞ্চাশ পয়সা
+
+console.log(convertToBanglaWords(2025.5));
+// Output: দুই হাজার পঁচিশ টাকা পঞ্চাশ পয়সা
+
+console.log(convertToBanglaWords(20987.88));
+// Output: বিশ হাজার নয় শত সাতাশি টাকা আটাশি পয়সা
+
+// Example 3: Large numbers
+console.log(convertToBanglaWords(100000));
+// Output: এক লক্ষ টাকা
+
+console.log(convertToBanglaWords(1500000));
+// Output: পনেরো লক্ষ টাকা
+
+console.log(convertToBanglaWords(10000000));
+// Output: এক কোটি টাকা
+
+// Example 4: Edge cases
+console.log(convertToBanglaWords(0));
+// Output: শূন্য টাকা
+
+console.log(convertToBanglaWords(0.5));
+// Output: শূন্য টাকা পঞ্চাশ পয়সা
+
+console.log(convertToBanglaWords(1234567.75));
+// Output: বারো লক্ষ চৌত্রিশ হাজার পাঁচ শত সাতষট্টি টাকা পঁচাত্তর পয়সা
+```
+
 ## Author
 
 **Polash Mahmud**
