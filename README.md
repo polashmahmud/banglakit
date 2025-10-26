@@ -425,6 +425,17 @@ Output:
 */
 ```
 
+## **getBanglaCalendarDate()**
+
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { getBanglaCalendarDate } = useBanglaKit();
+
+console.log(getBanglaCalendarDate());
+// Output: ২৬ কার্তিক ১৪৩২ বঙ্গাব্দ
+```
+
 ## Author
 
 **Polash Mahmud**
