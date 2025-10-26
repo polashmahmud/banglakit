@@ -462,6 +462,36 @@ console.log(getBanglaDateRange("2025-04-10", "2025-04-16"));
 // Output: ১০ এপ্রিল - ১৬ এপ্রিল ২০২৫
 ```
 
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { convertToBanglaTime } = useBanglaKit();
+
+// Example 1: Morning time
+console.log(convertToBanglaTime("07:10"));
+// Output: সকাল ৭:১০
+
+// Example 2: Noon time
+console.log(convertToBanglaTime("12:35"));
+// Output: দুপুর ১২:৩৫
+
+// Example 3: Afternoon time
+console.log(convertToBanglaTime("15:20"));
+// Output: বিকেল ৩:২০
+
+// Example 4: Evening time
+console.log(convertToBanglaTime("18:45"));
+// Output: সন্ধ্যা ৬:৪৫
+
+// Example 5: Night time
+console.log(convertToBanglaTime("22:15"));
+// Output: রাত ১০:১৫
+
+// Example 6: Midnight
+console.log(convertToBanglaTime("00:05"));
+// Output: রাত ১২:০৫
+```
+
 ## Author
 
 **Polash Mahmud**
