@@ -1,1 +1,1 @@
-export * from './useBanglaDate.js';
+export * from './useBanglaKit.js';
