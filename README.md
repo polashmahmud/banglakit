@@ -436,6 +436,32 @@ console.log(getBanglaCalendarDate());
 // Output: ২৬ কার্তিক ১৪৩২ বঙ্গাব্দ
 ```
 
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { getBanglaDateRange } = useBanglaKit();
+
+// Example 1: Same month range
+console.log(getBanglaDateRange("2025-10-25", "2025-10-30"));
+// Output: ২৫ - ৩০ অক্টোবর ২০২৫
+
+// Example 2: Different month range
+console.log(getBanglaDateRange("2025-10-25", "2025-11-10"));
+// Output: ২৫ অক্টোবর - ১০ নভেম্বর ২০২৫
+
+// Example 3: Custom range across years
+console.log(getBanglaDateRange("2024-12-20", "2025-01-05"));
+// Output: ২০ ডিসেম্বর - ৫ জানুয়ারি ২০২৪
+
+// Example 4: Short range in the same month
+console.log(getBanglaDateRange("2025-04-01", "2025-04-03"));
+// Output: ১ - ৩ এপ্রিল ২০২৫
+
+// Example 5: Pohela Boishakh period
+console.log(getBanglaDateRange("2025-04-10", "2025-04-16"));
+// Output: ১০ এপ্রিল - ১৬ এপ্রিল ২০২৫
+```
+
 ## Author
 
 **Polash Mahmud**
