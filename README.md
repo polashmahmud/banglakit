@@ -35,6 +35,48 @@ console.log(getTodayInBangla());
 // Output: ২৫ অক্টোবর, শনিবার
 ```
 
+## **convertToBanglaNumber()**
+
+```ts
+const { convertToBanglaNumber } = useBanglaKit();
+
+console.log(convertToBanglaNumber(123));
+// Output: ১২৩
+
+console.log(convertToBanglaNumber("2025"));
+// Output: ২০২৫
+
+console.log(convertToBanglaNumber("Price: 500 Tk"));
+// Output: Price: ৫০০ Tk
+
+console.log(convertToBanglaNumber(3.14));
+// Output: ৩.১৪
+
+console.log(convertToBanglaNumber("Phone: 01712345678"));
+// Output: Phone: ০১৭১২৩৪৫৬৭৮
+```
+
+## **convertToEnglishNumber()**
+
+```ts
+const { convertToEnglishNumber } = useBanglaKit();
+
+console.log(convertToEnglishNumber("১২৩"));
+// Output: 123
+
+console.log(convertToEnglishNumber("২০২৫"));
+// Output: 2025
+
+console.log(convertToEnglishNumber("মূল্য: ৫০০ টাকা"));
+// Output: মূল্য: 500 টাকা
+
+console.log(convertToEnglishNumber("৩.১৪"));
+// Output: 3.14
+
+console.log(convertToEnglishNumber("ফোন: ০১৭১২৩৪৫৬৭৮"));
+// Output: ফোন: 01712345678
+```
+
 ## Author
 
 **Polash Mahmud**
