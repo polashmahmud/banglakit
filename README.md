@@ -80,7 +80,7 @@ console.log(convertToEnglishNumber("ফোন: ০১৭১২৩৪৫৬৭৮
 ## **getBanglaMonth()**
 
 ```ts
-import { getBanglaMonth } = useBanglaKit();
+const { getBanglaMonth } = useBanglaKit();
 
 console.log(getBanglaMonth(1));
 // Output: জানুয়ারি
@@ -101,7 +101,7 @@ console.log(getBanglaMonth(0));
 ## **getBanglaDay()**
 
 ```ts
-import { getBanglaDay } = useBanglaKit();
+const { getBanglaDay } = useBanglaKit();
 
 console.log(getBanglaDay(1));
 // Output: রবিবার
@@ -120,6 +120,72 @@ console.log(getBanglaDay(7));
 
 console.log(getBanglaDay(0));
 // Output: (empty string, since index is invalid)
+```
+
+## **getFormattedBanglaDate()**
+
+Formats and returns the **current English date** in a **Bangla localized format**.
+You can customize the format using tokens similar to date libraries like `dayjs` or `moment.js`.
+
+### **Syntax**
+
+```ts
+getFormattedBanglaDate(format?: string): string
+```
+
+**Default format:**
+`"D MMMM, dddd, YYYY"`
+
+### **Available Format Tokens**
+
+| Token  | Description                          | Example Output |
+| :----- | :----------------------------------- | :------------- |
+| `D`    | Day (Bangla number)                  | ২৫             |
+| `DD`   | Day (2-digit Bangla number)          | ০৫             |
+| `M`    | Month number (Bangla number)         | ১০             |
+| `MM`   | Month number (2-digit Bangla number) | ০৭             |
+| `MMM`  | Month short name in Bangla           | অক্টো          |
+| `MMMM` | Full month name in Bangla            | অক্টোবর        |
+| `YYYY` | Year in Bangla                       | ২০২৫           |
+| `dddd` | Day name in Bangla                   | শনিবার         |
+
+### **Example Usage**
+
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { getFormattedBanglaDate } = useBanglaKit();
+
+console.log(getFormattedBanglaDate());
+// Output: ২৬ অক্টোবর, রবিবার, ২০২৫
+
+console.log(getFormattedBanglaDate("D MMMM, YYYY"));
+// Output: ২৬ অক্টোবর, ২০২৫
+
+console.log(getFormattedBanglaDate("DD/MM/YYYY"));
+// Output: ২৬/১০/২০২৫
+
+console.log(getFormattedBanglaDate("dddd, D MMMM"));
+// Output: রবিবার, ২৬ অক্টোবর
+
+console.log(getFormattedBanglaDate("MMM YYYY"));
+// Output: অক্টো ২০২৫
+```
+
+### **Example – Custom Format for UI Display**
+
+You can use different formats based on your interface needs.
+
+```ts
+const { getFormattedBanglaDate } = useBanglaKit();
+
+// Short numeric date
+console.log(getFormattedBanglaDate("DD-MM-YYYY"));
+// Output: ২৬-১০-২০২৫
+
+// With full weekday and month
+console.log(getFormattedBanglaDate("dddd, D MMMM YYYY"));
+// Output: রবিবার, ২৬ অক্টোবর ২০২৫
 ```
 
 ## Author
