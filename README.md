@@ -345,6 +345,86 @@ Output:
 */
 ```
 
+## **getBanglaDateObject()**
+
+Returns the **Bangla date as an object** containing the Bangla day, month, weekday, and year.
+If no date is provided, it returns the **current Bangla date**.
+
+### **Syntax**
+
+```ts
+getBanglaDateObject(dateInput?: Date): {
+  day: string;
+  month: string;
+  weekday: string;
+  year: string;
+}
+```
+
+### **Example Usage**
+
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { getBanglaDateObject } = useBanglaKit();
+
+// Get today's Bangla date
+console.log(getBanglaDateObject());
+/*
+Output:
+{
+  day: '২৬',
+  month: 'অক্টোবর',
+  weekday: 'রবিবার',
+  year: '১৪৩২'
+}
+*/
+
+// Get Bangla date for a specific Gregorian date
+console.log(getBanglaDateObject(new Date("2025-05-12")));
+/*
+Output:
+{
+  day: '১২',
+  month: 'মে',
+  weekday: 'সোমবার',
+  year: '১৪৩২'
+}
+*/
+```
+
+### **Example – Custom Dates**
+
+You can pass any `Date` object to get its Bangla equivalent.
+
+```ts
+const { getBanglaDateObject } = useBanglaKit();
+
+// Example 1: Beginning of the year
+console.log(getBanglaDateObject(new Date("2025-01-01")));
+/*
+Output:
+{
+  day: '১',
+  month: 'জানুয়ারি',
+  weekday: 'বুধবার',
+  year: '১৪৩১'
+}
+*/
+
+// Example 2: Pohela Boishakh (Bangla New Year)
+console.log(getBanglaDateObject(new Date("2025-04-14")));
+/*
+Output:
+{
+  day: '১৪',
+  month: 'এপ্রিল',
+  weekday: 'সোমবার',
+  year: '১৪৩২'
+}
+*/
+```
+
 ## Author
 
 **Polash Mahmud**
