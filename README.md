@@ -77,6 +77,51 @@ console.log(convertToEnglishNumber("ফোন: ০১৭১২৩৪৫৬৭৮
 // Output: ফোন: 01712345678
 ```
 
+## **getBanglaMonth()**
+
+```ts
+import { getBanglaMonth } = useBanglaKit();
+
+console.log(getBanglaMonth(1));
+// Output: জানুয়ারি
+
+console.log(getBanglaMonth(5));
+// Output: মে
+
+console.log(getBanglaMonth(10));
+// Output: অক্টোবর
+
+console.log(getBanglaMonth(12));
+// Output: ডিসেম্বর
+
+console.log(getBanglaMonth(0));
+// Output: (empty string, since index is invalid)
+```
+
+## **getBanglaDay()**
+
+```ts
+import { getBanglaDay } = useBanglaKit();
+
+console.log(getBanglaDay(1));
+// Output: রবিবার
+
+console.log(getBanglaDay(2));
+// Output: সোমবার
+
+console.log(getBanglaDay(5));
+// Output: বৃহস্পতিবার
+
+console.log(getBanglaDay(6));
+// Output: শুক্রবার
+
+console.log(getBanglaDay(7));
+// Output: শনিবার
+
+console.log(getBanglaDay(0));
+// Output: (empty string, since index is invalid)
+```
+
 ## Author
 
 **Polash Mahmud**
