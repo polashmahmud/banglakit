@@ -1,6 +1,6 @@
 {
   "name": "@polashmahmud/banglakit",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "A lightweight utility to display Bangla dates and convert numbers to Bangla digits.",
   "type": "module",
   "main": "dist/index.js",
