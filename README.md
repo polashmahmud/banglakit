@@ -3,18 +3,9 @@
 A lightweight JavaScript utility for displaying Bangla (Bengali) dates and converting English numbers into Bangla digits.
 It allows developers to easily localize their applications with Bangla date and number formatting.
 
-## Features
-
-- Convert English numbers to Bangla digits
-- Display today’s date in Bangla
-- Works with Vue, React, Next.js, Node.js, or any JavaScript/TypeScript project
-- Built with TypeScript and has zero dependencies
-
 ---
 
 ## Installation
-
-You can install the package using npm or yarn:
 
 ```bash
 npm install @polashmahmud/banglakit
@@ -22,9 +13,9 @@ npm install @polashmahmud/banglakit
 yarn add @polashmahmud/banglakit
 ```
 
-## Usage Examples
+---
 
-### Display Today’s Date in Bangla
+## Usage Examples
 
 ```ts
 import { useBanglaKit } from "@polashmahmud/banglakit";
@@ -34,8 +25,6 @@ const { getTodayInBangla } = useBanglaKit();
 console.log(getTodayInBangla());
 // Output: ২৫ অক্টোবর, শনিবার
 ```
-
-## **convertToBanglaNumber()**
 
 ```ts
 const { convertToBanglaNumber } = useBanglaKit();
@@ -56,8 +45,6 @@ console.log(convertToBanglaNumber("Phone: 01712345678"));
 // Output: Phone: ০১৭১২৩৪৫৬৭৮
 ```
 
-## **convertToEnglishNumber()**
-
 ```ts
 const { convertToEnglishNumber } = useBanglaKit();
 
@@ -77,8 +64,6 @@ console.log(convertToEnglishNumber("ফোন: ০১৭১২৩৪৫৬৭৮
 // Output: ফোন: 01712345678
 ```
 
-## **getBanglaMonth()**
-
 ```ts
 const { getBanglaMonth } = useBanglaKit();
 
@@ -93,12 +78,7 @@ console.log(getBanglaMonth(10));
 
 console.log(getBanglaMonth(12));
 // Output: ডিসেম্বর
-
-console.log(getBanglaMonth(0));
-// Output: (empty string, since index is invalid)
 ```
-
-## **getBanglaDay()**
 
 ```ts
 const { getBanglaDay } = useBanglaKit();
@@ -117,43 +97,9 @@ console.log(getBanglaDay(6));
 
 console.log(getBanglaDay(7));
 // Output: শনিবার
-
-console.log(getBanglaDay(0));
-// Output: (empty string, since index is invalid)
 ```
 
-## **getFormattedBanglaDate()**
-
-Formats and returns the **current English date** in a **Bangla localized format**.
-You can customize the format using tokens similar to date libraries like `dayjs` or `moment.js`.
-
-### **Syntax**
-
 ```ts
-getFormattedBanglaDate(format?: string): string
-```
-
-**Default format:**
-`"D MMMM, dddd, YYYY"`
-
-### **Available Format Tokens**
-
-| Token  | Description                          | Example Output |
-| :----- | :----------------------------------- | :------------- |
-| `D`    | Day (Bangla number)                  | ২৫             |
-| `DD`   | Day (2-digit Bangla number)          | ০৫             |
-| `M`    | Month number (Bangla number)         | ১০             |
-| `MM`   | Month number (2-digit Bangla number) | ০৭             |
-| `MMM`  | Month short name in Bangla           | অক্টো          |
-| `MMMM` | Full month name in Bangla            | অক্টোবর        |
-| `YYYY` | Year in Bangla                       | ২০২৫           |
-| `dddd` | Day name in Bangla                   | শনিবার         |
-
-### **Example Usage**
-
-```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { getFormattedBanglaDate } = useBanglaKit();
 
 console.log(getFormattedBanglaDate());
@@ -172,82 +118,25 @@ console.log(getFormattedBanglaDate("MMM YYYY"));
 // Output: অক্টো ২০২৫
 ```
 
-### **Example – Custom Format for UI Display**
-
-You can use different formats based on your interface needs.
-
 ```ts
-const { getFormattedBanglaDate } = useBanglaKit();
-
-// Short numeric date
-console.log(getFormattedBanglaDate("DD-MM-YYYY"));
-// Output: ২৬-১০-২০২৫
-
-// With full weekday and month
-console.log(getFormattedBanglaDate("dddd, D MMMM YYYY"));
-// Output: রবিবার, ২৬ অক্টোবর ২০২৫
-```
-
-## **getBanglaYear()**
-
-Returns the **current Bangla year (in Bangla digits)** based on today’s Gregorian date.
-
-### **Syntax**
-
-```ts
-getBanglaYear(): string
-```
-
-### **Example Usage**
-
-```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { getBanglaYear } = useBanglaKit();
 
 console.log(getBanglaYear());
 // Output: ১৪৩২
 ```
 
-## **getEnglishToBanglaYear()**
-
-Converts a given **English year** (optionally with month and date) into a **Bangla year**.
-
-### **Syntax**
-
-```ts
-getEnglishToBanglaYear(englishYear: number, month?: number, date?: number): string
-```
-
-### **Example Usage**
-
 ```ts
 const { getEnglishToBanglaYear } = useBanglaKit();
 
-// Default conversion (mid-year)
 console.log(getEnglishToBanglaYear(2025));
 // Output: ১৪৩২
 
-// Before 14 April, Bangla year decreases by 1
 console.log(getEnglishToBanglaYear(2025, 3, 10));
 // Output: ১৪৩১
 
-// After 14 April, Bangla year remains current
 console.log(getEnglishToBanglaYear(2025, 4, 20));
 // Output: ১৪৩২
 ```
-
-## **getBanglaToEnglishYear()**
-
-Converts a **Bangla year** into an **English (Gregorian) year**.
-
-### **Syntax**
-
-```ts
-getBanglaToEnglishYear(banglaYear: number): string
-```
-
-### **Example Usage**
 
 ```ts
 const { getBanglaToEnglishYear } = useBanglaKit();
@@ -259,41 +148,15 @@ console.log(getBanglaToEnglishYear(১৪৩১));
 // Output: 2024
 ```
 
-## **getBanglaNewYearDate()**
-
-Returns the **Gregorian date** of Bangla New Year (**Pohela Boishakh**) for a given English year.
-
-### **Syntax**
-
-```ts
-getBanglaNewYearDate(englishYear?: number): string
-```
-
-### **Example Usage**
-
 ```ts
 const { getBanglaNewYearDate } = useBanglaKit();
 
-// Current year
 console.log(getBanglaNewYearDate());
 // Output: Mon Apr 14 2025
 
-// For a specific English year
 console.log(getBanglaNewYearDate(2023));
 // Output: Fri Apr 14 2023
 ```
-
-## **isBanglaLeapYear()**
-
-Checks whether a **Bangla year** corresponds to a **leap year** in the Gregorian calendar.
-
-### **Syntax**
-
-```ts
-isBanglaLeapYear(banglaYear?: number): boolean
-```
-
-### **Example Usage**
 
 ```ts
 const { isBanglaLeapYear } = useBanglaKit();
@@ -302,33 +165,11 @@ console.log(isBanglaLeapYear(১৪৩১));
 // Output: false
 
 console.log(isBanglaLeapYear(১৪৩২));
-// Output: true or false (depending on current Gregorian leap year)
+// Output: true or false
 
 console.log(isBanglaLeapYear());
-// Output: true or false (for current year)
+// Output: true or false
 ```
-
-## **getBanglaYearInfo()**
-
-Returns detailed information about the current Bangla year, including:
-
-- English year
-- Bangla year
-- Pohela Boishakh date
-- Leap year status
-
-### **Syntax**
-
-```ts
-getBanglaYearInfo(): {
-  englishYear: number;
-  banglaYear: string;
-  newYearDate: string;
-  isLeapYear: boolean;
-}
-```
-
-### **Example Usage**
 
 ```ts
 const { getBanglaYearInfo } = useBanglaKit();
@@ -345,30 +186,9 @@ Output:
 */
 ```
 
-## **getBanglaDateObject()**
-
-Returns the **Bangla date as an object** containing the Bangla day, month, weekday, and year.
-If no date is provided, it returns the **current Bangla date**.
-
-### **Syntax**
-
 ```ts
-getBanglaDateObject(dateInput?: Date): {
-  day: string;
-  month: string;
-  weekday: string;
-  year: string;
-}
-```
-
-### **Example Usage**
-
-```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { getBanglaDateObject } = useBanglaKit();
 
-// Get today's Bangla date
 console.log(getBanglaDateObject());
 /*
 Output:
@@ -380,7 +200,6 @@ Output:
 }
 */
 
-// Get Bangla date for a specific Gregorian date
 console.log(getBanglaDateObject(new Date("2025-05-12")));
 /*
 Output:
@@ -393,43 +212,7 @@ Output:
 */
 ```
 
-### **Example – Custom Dates**
-
-You can pass any `Date` object to get its Bangla equivalent.
-
 ```ts
-const { getBanglaDateObject } = useBanglaKit();
-
-// Example 1: Beginning of the year
-console.log(getBanglaDateObject(new Date("2025-01-01")));
-/*
-Output:
-{
-  day: '১',
-  month: 'জানুয়ারি',
-  weekday: 'বুধবার',
-  year: '১৪৩১'
-}
-*/
-
-// Example 2: Pohela Boishakh (Bangla New Year)
-console.log(getBanglaDateObject(new Date("2025-04-14")));
-/*
-Output:
-{
-  day: '১৪',
-  month: 'এপ্রিল',
-  weekday: 'সোমবার',
-  year: '১৪৩২'
-}
-*/
-```
-
-## **getBanglaCalendarDate()**
-
-```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { getBanglaCalendarDate } = useBanglaKit();
 
 console.log(getBanglaCalendarDate());
@@ -437,67 +220,49 @@ console.log(getBanglaCalendarDate());
 ```
 
 ```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { getBanglaDateRange } = useBanglaKit();
 
-// Example 1: Same month range
 console.log(getBanglaDateRange("2025-10-25", "2025-10-30"));
 // Output: ২৫ - ৩০ অক্টোবর ২০২৫
 
-// Example 2: Different month range
 console.log(getBanglaDateRange("2025-10-25", "2025-11-10"));
 // Output: ২৫ অক্টোবর - ১০ নভেম্বর ২০২৫
 
-// Example 3: Custom range across years
 console.log(getBanglaDateRange("2024-12-20", "2025-01-05"));
 // Output: ২০ ডিসেম্বর - ৫ জানুয়ারি ২০২৪
 
-// Example 4: Short range in the same month
 console.log(getBanglaDateRange("2025-04-01", "2025-04-03"));
 // Output: ১ - ৩ এপ্রিল ২০২৫
 
-// Example 5: Pohela Boishakh period
 console.log(getBanglaDateRange("2025-04-10", "2025-04-16"));
 // Output: ১০ এপ্রিল - ১৬ এপ্রিল ২০২৫
 ```
 
 ```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { convertToBanglaTime } = useBanglaKit();
 
-// Example 1: Morning time
 console.log(convertToBanglaTime("07:10"));
 // Output: সকাল ৭:১০
 
-// Example 2: Noon time
 console.log(convertToBanglaTime("12:35"));
 // Output: দুপুর ১২:৩৫
 
-// Example 3: Afternoon time
 console.log(convertToBanglaTime("15:20"));
 // Output: বিকেল ৩:২০
 
-// Example 4: Evening time
 console.log(convertToBanglaTime("18:45"));
 // Output: সন্ধ্যা ৬:৪৫
 
-// Example 5: Night time
 console.log(convertToBanglaTime("22:15"));
 // Output: রাত ১০:১৫
 
-// Example 6: Midnight
 console.log(convertToBanglaTime("00:05"));
 // Output: রাত ১২:০৫
 ```
 
 ```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { convertToBanglaOrdinal } = useBanglaKit();
 
-// Example 1: Basic ordinals
 console.log(convertToBanglaOrdinal(1));
 // Output: প্রথম
 
@@ -510,7 +275,6 @@ console.log(convertToBanglaOrdinal(3));
 console.log(convertToBanglaOrdinal(4));
 // Output: চতুর্থ
 
-// Example 2: Teen and twenties
 console.log(convertToBanglaOrdinal(11));
 // Output: একাদশ
 
@@ -520,7 +284,6 @@ console.log(convertToBanglaOrdinal(15));
 console.log(convertToBanglaOrdinal(21));
 // Output: একবিংশ
 
-// Example 3: Larger numbers
 console.log(convertToBanglaOrdinal(30));
 // Output: ত্রিংশ
 
@@ -530,7 +293,6 @@ console.log(convertToBanglaOrdinal(50));
 console.log(convertToBanglaOrdinal(100));
 // Output: শততম
 
-// Example 4: Fallback pattern (not predefined)
 console.log(convertToBanglaOrdinal(33));
 // Output: ৩৩তম
 
@@ -539,11 +301,8 @@ console.log(convertToBanglaOrdinal(77));
 ```
 
 ```ts
-import { useBanglaKit } from "@polashmahmud/banglakit";
-
 const { convertToBanglaWords } = useBanglaKit();
 
-// Example 1: Whole number
 console.log(convertToBanglaWords(1));
 // Output: এক টাকা
 
@@ -556,7 +315,6 @@ console.log(convertToBanglaWords(105));
 console.log(convertToBanglaWords(2025));
 // Output: দুই হাজার পঁচিশ টাকা
 
-// Example 2: With poisha (decimal part)
 console.log(convertToBanglaWords(1.1));
 // Output: এক টাকা দশ পয়সা
 
@@ -569,7 +327,6 @@ console.log(convertToBanglaWords(2025.5));
 console.log(convertToBanglaWords(20987.88));
 // Output: বিশ হাজার নয় শত সাতাশি টাকা আটাশি পয়সা
 
-// Example 3: Large numbers
 console.log(convertToBanglaWords(100000));
 // Output: এক লক্ষ টাকা
 
@@ -579,7 +336,6 @@ console.log(convertToBanglaWords(1500000));
 console.log(convertToBanglaWords(10000000));
 // Output: এক কোটি টাকা
 
-// Example 4: Edge cases
 console.log(convertToBanglaWords(0));
 // Output: শূন্য টাকা
 
@@ -589,6 +345,8 @@ console.log(convertToBanglaWords(0.5));
 console.log(convertToBanglaWords(1234567.75));
 // Output: বারো লক্ষ চৌত্রিশ হাজার পাঁচ শত সাতষট্টি টাকা পঁচাত্তর পয়সা
 ```
+
+---
 
 ## Author
 
@@ -603,9 +361,3 @@ console.log(convertToBanglaWords(1234567.75));
 
 This package is licensed under the [MIT License](./LICENSE).
 You can freely use it in personal or commercial projects.
-
----
-
-## Contributing
-
-If you’d like to suggest a new feature or report a bug, feel free to open an issue or submit a pull request on the GitHub repository.
