@@ -188,6 +188,163 @@ console.log(getFormattedBanglaDate("dddd, D MMMM YYYY"));
 // Output: রবিবার, ২৬ অক্টোবর ২০২৫
 ```
 
+## **getBanglaYear()**
+
+Returns the **current Bangla year (in Bangla digits)** based on today’s Gregorian date.
+
+### **Syntax**
+
+```ts
+getBanglaYear(): string
+```
+
+### **Example Usage**
+
+```ts
+import { useBanglaKit } from "@polashmahmud/banglakit";
+
+const { getBanglaYear } = useBanglaKit();
+
+console.log(getBanglaYear());
+// Output: ১৪৩২
+```
+
+## **getEnglishToBanglaYear()**
+
+Converts a given **English year** (optionally with month and date) into a **Bangla year**.
+
+### **Syntax**
+
+```ts
+getEnglishToBanglaYear(englishYear: number, month?: number, date?: number): string
+```
+
+### **Example Usage**
+
+```ts
+const { getEnglishToBanglaYear } = useBanglaKit();
+
+// Default conversion (mid-year)
+console.log(getEnglishToBanglaYear(2025));
+// Output: ১৪৩২
+
+// Before 14 April, Bangla year decreases by 1
+console.log(getEnglishToBanglaYear(2025, 3, 10));
+// Output: ১৪৩১
+
+// After 14 April, Bangla year remains current
+console.log(getEnglishToBanglaYear(2025, 4, 20));
+// Output: ১৪৩২
+```
+
+## **getBanglaToEnglishYear()**
+
+Converts a **Bangla year** into an **English (Gregorian) year**.
+
+### **Syntax**
+
+```ts
+getBanglaToEnglishYear(banglaYear: number): string
+```
+
+### **Example Usage**
+
+```ts
+const { getBanglaToEnglishYear } = useBanglaKit();
+
+console.log(getBanglaToEnglishYear(১৪৩২));
+// Output: 2025
+
+console.log(getBanglaToEnglishYear(১৪৩১));
+// Output: 2024
+```
+
+## **getBanglaNewYearDate()**
+
+Returns the **Gregorian date** of Bangla New Year (**Pohela Boishakh**) for a given English year.
+
+### **Syntax**
+
+```ts
+getBanglaNewYearDate(englishYear?: number): string
+```
+
+### **Example Usage**
+
+```ts
+const { getBanglaNewYearDate } = useBanglaKit();
+
+// Current year
+console.log(getBanglaNewYearDate());
+// Output: Mon Apr 14 2025
+
+// For a specific English year
+console.log(getBanglaNewYearDate(2023));
+// Output: Fri Apr 14 2023
+```
+
+## **isBanglaLeapYear()**
+
+Checks whether a **Bangla year** corresponds to a **leap year** in the Gregorian calendar.
+
+### **Syntax**
+
+```ts
+isBanglaLeapYear(banglaYear?: number): boolean
+```
+
+### **Example Usage**
+
+```ts
+const { isBanglaLeapYear } = useBanglaKit();
+
+console.log(isBanglaLeapYear(১৪৩১));
+// Output: false
+
+console.log(isBanglaLeapYear(১৪৩২));
+// Output: true or false (depending on current Gregorian leap year)
+
+console.log(isBanglaLeapYear());
+// Output: true or false (for current year)
+```
+
+## **getBanglaYearInfo()**
+
+Returns detailed information about the current Bangla year, including:
+
+- English year
+- Bangla year
+- Pohela Boishakh date
+- Leap year status
+
+### **Syntax**
+
+```ts
+getBanglaYearInfo(): {
+  englishYear: number;
+  banglaYear: string;
+  newYearDate: string;
+  isLeapYear: boolean;
+}
+```
+
+### **Example Usage**
+
+```ts
+const { getBanglaYearInfo } = useBanglaKit();
+
+console.log(getBanglaYearInfo());
+/*
+Output:
+{
+  englishYear: 2025,
+  banglaYear: '১৪৩২',
+  newYearDate: '১৪ এপ্রিল, ২০২৫',
+  isLeapYear: false
+}
+*/
+```
+
 ## Author
 
 **Polash Mahmud**
