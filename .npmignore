@@ -1,0 +1,17 @@
+# Exclude development files from npm package
+src/
+node_modules/
+tests/
+.vscode/
+.idea/
+
+# Config and environment files
+.env
+.env.local
+.gitignore
+npm-debug.log*
+tsconfig.json
+package-lock.json
+
+# Documentation files
+# README.md
