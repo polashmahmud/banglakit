@@ -3,19 +3,19 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   ignoreDeadLinks: true,
-  title: "বাংলা কিট",
-  description: "একটি পূর্ণাঙ্গ বাংলা ডেভেলপমেন্ট কিট।",
+  title: "BanglaKit",
+  description: "A Bengali UI toolkit for PHP developers.",
   base: "/banglakit/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'হোম পেজ', link: '/' },
-      { text: 'ডকুমেন্টেশন', link: '/markdown-examples' }
+      { text: 'Home', link: '/' },
+      { text: 'Documentation', link: '/markdown-examples' }
     ],
 
     sidebar: [
       {
-        text: 'ডকুমেন্টেশন',
+        text: 'Documentation',
         items: [
           { text: 'Markdown Examples', link: '/markdown-examples' },
           { text: 'Runtime API Examples', link: '/api-examples' }
@@ -44,21 +44,4 @@ export default defineConfig({
       provider: "local",
     },
   },
-  head: [
-    [
-      'link',
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' }
-    ],
-    [
-      'link',
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }
-    ],
-    [
-      'link',
-      {
-        href: 'https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap',
-        rel: 'stylesheet'
-      }
-    ],
-  ],
 })
