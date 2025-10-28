@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Bangla Kit",
   description: "A VitePress Site",
+  base: "/banglakit/",
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
