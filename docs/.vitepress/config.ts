@@ -18,20 +18,21 @@ export default defineConfig({
         text: 'Documentation',
         items: [
           { text: 'Installation', link: '/install' },
+          { text: 'Number Converter', link: '/number-converter' },
+          { text: 'Date & Time', link: '/date-and-time' },
+          { text: 'In Words', link: '/in-words' },
         ]
       }
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/polashmahmud/php" },
+      { icon: "github", link: "https://github.com/polashmahmud/" },
       {
         icon: "facebook",
-        link: "https://www.facebook.com/learnwithpolashmahmud",
+        link: "https://www.facebook.com/polashmahmud4",
       },
       { icon: "youtube", link: "https://www.youtube.com/polashmahmud4" },
-      { icon: "linkedin", link: "https://www.linkedin.com/in/polashmahmud4/" },
-      { icon: "discord", link: "https://discord.gg/mktPP7n9xp" },
-      { icon: "x", link: "https://twitter.com/polashmahmud4" },
+      { icon: "linkedin", link: "https://www.linkedin.com/in/polashmahmud4/" }
     ],
 
     footer: {
