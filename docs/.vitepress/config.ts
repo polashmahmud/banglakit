@@ -18,8 +18,8 @@ export default defineConfig({
         text: 'Documentation',
         items: [
           { text: 'Installation', link: '/install' },
-          { text: 'Number Converter', link: '/number-converter' },
           { text: 'Date & Time', link: '/date-and-time' },
+          { text: 'Number Converter', link: '/number-converter' },
           { text: 'In Words', link: '/in-words' },
         ]
       }
