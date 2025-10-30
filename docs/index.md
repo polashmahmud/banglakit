@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Bangla Kit"
-  text: "A Bengali UI toolkit for PHP developers."
+  text: "A Bengali UI toolkit for Node.js and TypeScript developers."
   tagline: "Author: Polash Mahmud"
   # actions:
   #   - theme: brand
